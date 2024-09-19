@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1726775795
+CosmicLilac_AnimatedSpriteSheet.png::CompressedTexture2D::7720451305255171780::1619283750::1726617291::1::::<><>::
+CosmicLilac_Tiles.png::CompressedTexture2D::2941200790230845528::1726617024::1726617253::1::::<><>::
+default_env.tres::Environment::-1::1726615039::0::1::::<><>::
+icon.png::CompressedTexture2D::8178585601617419792::1726615039::1726615050::1::::<><>::
+main_game.tscn::PackedScene::3618932315148743599::1726619385::0::1::::<><>::uid://bh50fajqxcpgq::::res://CosmicLilac_Tiles.png<>uid://dt875ue4vgujm::::res://player.tscn
+player.gd::GDScript::-1::1726619385::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::8562972121663734958::1726619385::0::1::::<><>::res://player.gd<>uid://dh83x8ak7sojk::::res://CosmicLilac_AnimatedSpriteSheet.png
+::res://addons/::1726615039
