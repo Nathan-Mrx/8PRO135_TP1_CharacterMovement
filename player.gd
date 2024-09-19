@@ -5,34 +5,21 @@ extends CharacterBody2D
 const SPEED = 80.0
 
 func _physics_process(delta: float) -> void:
-	var direction_x := Input.get_axis("ui_left", "ui_right")
-	var direction_y := Input.get_axis("ui_up", "ui_down")
+	var direction := Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("up", "down")
+	).normalized()
 
-	
+	velocity = direction * SPEED
 
-	if direction_x:
-		velocity.x = direction_x * SPEED
+	if direction.x != 0:
 		sprite.play("walk_right_left")
-		sprite.flip_h = direction_x < 0
+		sprite.flip_h = direction.x < 0
+	elif direction.y > 0:
+		sprite.play("walk_down")
+	elif direction.y < 0:
+		sprite.play("walk_up")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	if direction_y:
-		velocity.y = direction_y * SPEED
-		if direction_y > 0:
-			sprite.play("walk_down")
-		else:
-			sprite.play("walk_up")
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-
-	if direction_x and direction_y :
-		velocity.x = (direction_x * SPEED) /1.5
-		velocity.y = (direction_y * SPEED) /1.5
-		sprite.play("walk_right_left")
-		sprite.flip_h = direction_x < 0
-		
-	if direction_x == 0 and direction_y == 0:
 		sprite.play("idle")
 
 	move_and_slide()
