@@ -8,6 +8,8 @@ func _physics_process(delta: float) -> void:
 	var direction_x := Input.get_axis("ui_left", "ui_right")
 	var direction_y := Input.get_axis("ui_up", "ui_down")
 
+	
+
 	if direction_x:
 		velocity.x = direction_x * SPEED
 		sprite.play("walk_right_left")
@@ -24,6 +26,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	if direction_x and direction_y :
+		velocity.x = (direction_x * SPEED) /1.5
+		velocity.y = (direction_y * SPEED) /1.5
+		sprite.play("walk_right_left")
+		sprite.flip_h = direction_x < 0
+		
 	if direction_x == 0 and direction_y == 0:
 		sprite.play("idle")
 
