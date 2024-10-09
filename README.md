@@ -8,6 +8,8 @@ TP1_CharacterMovement est un jeu développé avec le moteur Godot. Le jeu met en
 - Animations pour les mouvements vers la gauche, la droite, le haut et le bas.
 - Animation d'attente lorsque le personnage ne bouge pas.
 - Gestion de la vitesse de déplacement pour éviter les mouvements trop rapides en diagonale.
+- Gestion des levels
+- Gestion des sauvegarde
 
 ## Configuration des touches
 Les touches par défaut pour contrôler le personnage sont :
@@ -25,7 +27,8 @@ Les touches par défaut pour contrôler le personnage sont :
 
 ## Utilisation
 1. Lancez le projet dans Godot.
-2. Utilisez les touches directionnelles pour déplacer le personnage.
+2. Utilisez les touches directionnelles ou WASD pour déplacer le personnage.
+3. Utilisez la touche Escape pour mettre en pause
 
 ## Auteurs
 
