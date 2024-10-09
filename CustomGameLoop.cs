@@ -6,7 +6,7 @@ public partial class CustomGameLoop : SceneTree
 {
     private static CustomGameLoop _instance;
     private LevelManager _levelManager;
-    // private SaveManager _saveManager;
+    private SaveManager _saveManager;
 
     public CustomGameLoop()
     {
@@ -18,8 +18,8 @@ public partial class CustomGameLoop : SceneTree
 
         _levelManager = LevelManager.Instance;
         this.Root.AddChild(_levelManager);
-        // _saveManager = SaveManager.Instance;
-        // this.Root.AddChild(_saveManager);
+        _saveManager = SaveManager.Instance;
+        this.Root.AddChild(_saveManager);
     }
 
     public static CustomGameLoop Get()
@@ -36,10 +36,8 @@ public partial class CustomGameLoop : SceneTree
         return _levelManager;
     }
 
-    /* 
     public SaveManager GetSaveManager()
     {
         return _saveManager;
     } 
-    */
 }

@@ -13,5 +13,10 @@ public partial class MainMenu : Control
 		GetTree().Quit();
 	}
 
+	private void _on_load_button_button_up()
+	{
+		CustomGameLoop.Get().GetLevelManager().LoadLevel("res://main_game.tscn");
+		CustomGameLoop.Get().GetSaveManager().LoadGame("res://save.json");
+	}
 
 }
