@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://dt875ue4vgujm"]
+[gd_scene load_steps=30 format=3 uid="uid://dt875ue4vgujm"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_0bqah"]
 [ext_resource type="Texture2D" uid="uid://dh83x8ak7sojk" path="res://CosmicLilac_AnimatedSpriteSheet.png" id="1_mdma5"]
+[ext_resource type="PackedScene" uid="uid://c3e64k2yvwcpe" path="res://pause_menu.tscn" id="3_lcr0j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ctiao"]
 atlas = ExtResource("1_mdma5")
@@ -197,7 +198,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_oqfra"]
 radius = 7.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Persist"]]
 script = ExtResource("1_0bqah")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
@@ -210,3 +211,6 @@ frame_progress = 0.123407
 shape = SubResource("CircleShape2D_oqfra")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_lcr0j")]
+visible = false

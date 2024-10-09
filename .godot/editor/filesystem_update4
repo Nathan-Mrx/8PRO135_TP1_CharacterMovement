@@ -1,4 +1,11 @@
-res://player.tscn
 res://main_game.tscn
 res://tile_set_collision.tres
+res://player.tscn
 res://player.gd
+res://CustomGameLoop.cs
+res://main_menu.tscn
+res://MainMenu.cs
+res://level_manager.cs
+res://SaveManager.cs
+res://pause_menu.tscn
+res://PauseMenu.cs
