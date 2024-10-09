@@ -6,8 +6,6 @@ using FileAccess = Godot.FileAccess;
 public partial class SaveManager : Node
 {
 
-	private Node _rootNode;
-
 	private static SaveManager _instance;
 	public static SaveManager Instance
 	{
@@ -15,30 +13,10 @@ public partial class SaveManager : Node
 		{
 			if (_instance == null)
 			{
-				_instance = new SaveManager(CustomGameLoop.Get().Root);
+				_instance = new SaveManager();
 			}
 			return _instance;
 		}
-	}
-
-	public SaveManager(Node rootNode)
-	{
-		_rootNode = rootNode;
-	}
-
-	private Node FindNodeByName(Node root, string name)
-	{
-		if (root.Name == name)
-			return root;
-
-		foreach (Node child in root.GetChildren())
-		{
-			var result = FindNodeByName(child, name);
-			if (result != null)
-				return result;
-		}
-
-		return null;
 	}
 	
 	public void LoadGame(string filePath)
